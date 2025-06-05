@@ -180,5 +180,5 @@ uv run pytest tests/test_main.py -v
 
 ## Dependencies
 
-- **Runtime**: FastAPI, uvicorn, OpenAI Agents SDK, sentence-transformers, PyGithub
+- **Runtime**: FastAPI, uvicorn, OpenAI Agents SDK, PyGithub
 - **Dev**: pytest, pytest-asyncio, ruff, black, mypy

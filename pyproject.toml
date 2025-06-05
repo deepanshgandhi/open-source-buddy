@@ -8,7 +8,6 @@ dependencies = [
     "fastapi",
     "uvicorn[standard]",
     "python-dotenv",
-    "sentence-transformers",
     "openai-agents>=0.0.17",
     "openai>=1.0.0",
     "httpx",
