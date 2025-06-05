@@ -114,6 +114,37 @@ asyncio.run(main())
 uv run python examples/pipeline_example.py
 ```
 
+## User Interface
+
+The application features an intuitive web interface for skill-based issue discovery:
+
+**Input Interface:**
+![Open Source Buddy - Skill Input](images/interface_1.png)
+
+**Results Interface:**
+![Open Source Buddy - Issue Recommendations](images/interface_2.png)
+*Example showing one recommendation from multiple results returned by the AI assistant*
+
+### How to Use
+
+1. **Describe Your Skills**: Enter your programming experience, languages, and areas of interest in natural language
+   - Example: *"I have 5 years of experience as a software developer, I want to work on frontend technologies like reactjs, nextjs"*
+
+2. **Get Personalized Recommendations**: Click "Find My Perfect Issues" to receive AI-curated issue suggestions
+
+3. **Review Results**: Browse through issues ranked by relevance to your skills, complete with:
+   - **Difficulty Level**: Easy, Medium, or Hard
+   - **Match Score**: How well the issue aligns with your skills
+   - **Personalized Summary**: AI-generated description tailored to your background
+   - **Repository Context**: Understanding of the project's purpose and tech stack
+
+### Key Features
+
+- **Natural Language Input**: No need for structured data - just describe your skills conversationally
+- **AI-Powered Matching**: Uses OpenAI embeddings and cosine similarity for semantic understanding
+- **Contextual Analysis**: Considers your experience level and interests when ranking issues
+- **Repository Intelligence**: Automatically analyzes README files to understand project context
+
 ## Architecture
 
 The system consists of three main agents:
