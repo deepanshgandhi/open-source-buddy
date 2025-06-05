@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import Mock, patch, AsyncMock
-from our_agents.search_agent import SearchAgent, run as search_run
+from custom_agents.search_agent import SearchAgent, run as search_run
 from app.schemas import RawIssue
 from app.github_service import GitHubService
 
@@ -66,10 +66,10 @@ class TestProfileAgent:
     @pytest.mark.asyncio
     async def test_profile_agent_imports(self):
         """Test that ProfileAgent can be imported and instantiated."""
-        from our_agents.profile_agent import ProfileAgent
+        from custom_agents.profile_agent import ProfileAgent
         
         # Mock the settings to avoid requiring actual API keys
-        with patch('our_agents.profile_agent.get_settings') as mock_settings:
+        with patch('custom_agents.profile_agent.get_settings') as mock_settings:
             mock_settings.return_value.OPENAI_API_KEY = "test_key"
             mock_settings.return_value.OPENAI_MODEL = "gpt-4o-mini"
             mock_settings.return_value.EMBED_MODEL = "all-MiniLM-L6-v2"
@@ -82,10 +82,10 @@ class TestMatchAgent:
     @pytest.mark.asyncio
     async def test_match_agent_imports(self):
         """Test that MatchAgent can be imported and instantiated."""
-        from our_agents.match_agent import MatchAgent
+        from custom_agents.match_agent import MatchAgent
         
         # Mock the settings to avoid requiring actual API keys
-        with patch('our_agents.match_agent.get_settings') as mock_settings:
+        with patch('custom_agents.match_agent.get_settings') as mock_settings:
             mock_settings.return_value.OPENAI_API_KEY = "test_key"
             mock_settings.return_value.OPENAI_MODEL = "gpt-4o-mini"
             mock_settings.return_value.EMBED_MODEL = "all-MiniLM-L6-v2"
@@ -96,8 +96,8 @@ class TestMatchAgent:
 
 class TestAgentsModule:
     def test_agents_imports(self):
-        """Test that all agents can be imported from our_agents module."""
-        from our_agents import (
+        """Test that all agents can be imported from custom_agents module."""
+        from custom_agents import (
             ProfileAgent, 
             SearchAgent, 
             MatchAgent,

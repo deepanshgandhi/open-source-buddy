@@ -4,7 +4,7 @@ from typing import List
 from app.config import get_settings
 from app.schemas import RecommendationResponse, SkillProfile, RawIssue, RankedIssue
 from app.github_service import GitHubService
-from our_agents import profile_run, search_run, match_run
+from custom_agents import profile_run, search_run, match_run
 
 
 async def recommend(user_text: str, top_k: int = 10) -> RecommendationResponse:

@@ -118,9 +118,9 @@ uv run python examples/pipeline_example.py
 
 The system consists of three main agents:
 
-1. **ProfileAgent** (`our_agents/profile_agent.py`): Extracts technical skills from user text using OpenAI Agents SDK
-2. **SearchAgent** (`our_agents/search_agent.py`): Searches GitHub for issues using extracted skills as keywords
-3. **MatchAgent** (`our_agents/match_agent.py`): Ranks issues based on semantic similarity, analyzes difficulty, and provides personalized summaries using the original user context
+1. **ProfileAgent** (`custom_agents/profile_agent.py`): Extracts technical skills from user text using OpenAI Agents SDK
+2. **SearchAgent** (`custom_agents/search_agent.py`): Searches GitHub for issues using extracted skills as keywords
+3. **MatchAgent** (`custom_agents/match_agent.py`): Ranks issues based on semantic similarity, analyzes difficulty, and provides personalized summaries using the original user context
 
 The `app/pipeline.py` module orchestrates these agents to provide end-to-end recommendations.
 
