@@ -19,10 +19,16 @@ class RawIssue(BaseModel):
 Difficulty = Literal["Easy", "Medium", "Hard"]
 
 
-class RankedIssue(RawIssue):
+class RankedIssue(BaseModel):
+    id: int
+    url: HttpUrl
+    title: str
+    labels: list[str]
+    repo: str
     score: float
     difficulty: Difficulty
     summary: str
+    repo_summary: str
 
 
 class RecommendationResponse(BaseModel):

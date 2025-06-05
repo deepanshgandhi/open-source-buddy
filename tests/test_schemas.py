@@ -71,7 +71,8 @@ class TestRankedIssue:
             repo="test/repo",
             score=0.85,
             difficulty="Medium",
-            summary="A medium difficulty enhancement request"
+            summary="A medium difficulty enhancement request",
+            repo_summary="A test repository for software development"
         )
         
         assert issue.score == 0.85
@@ -90,7 +91,8 @@ class TestRankedIssue:
                 repo="test/repo",
                 score=0.5,
                 difficulty="Invalid",  # This should fail
-                summary="Test summary"
+                summary="Test summary",
+                repo_summary="A test repository"
             )
 
 
@@ -106,7 +108,8 @@ class TestRecommendationResponse:
             repo="example/repo",
             score=0.7,
             difficulty="Easy",
-            summary="Easy documentation task"
+            summary="Easy documentation task",
+            repo_summary="An example repository for testing"
         )
         
         response = RecommendationResponse(items=[ranked_issue])
@@ -136,6 +139,7 @@ class TestDifficulty:
                 repo="test/repo",
                 score=0.5,
                 difficulty=difficulty,
-                summary="Test"
+                summary="Test",
+                repo_summary="A test repository"
             )
             assert issue.difficulty == difficulty 

@@ -9,7 +9,8 @@ dependencies = [
     "uvicorn[standard]",
     "python-dotenv",
     "sentence-transformers",
-    "openai>=1.17",
+    "openai-agents>=0.0.17",
+    "openai>=1.0.0",
     "httpx",
     "PyGithub>=2.3",
     "numpy",
@@ -26,12 +27,15 @@ dev = [
     "mypy",
 ]
 
+[project.scripts]
+open-source-buddy = "app.main:main"
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["app"]
+packages = ["app", "our_agents"]
 
 [tool.black]
 line-length = 88

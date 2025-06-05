@@ -1,6 +1,8 @@
 import os
 import pytest
 from unittest.mock import patch
+from pydantic import ValidationError
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from app.config import Settings, get_settings
 
@@ -36,11 +38,23 @@ class TestSettings:
         assert settings1.GH_TOKEN == "cached_gh_token"
         assert settings1.OPENAI_API_KEY == "cached_openai_key"
 
+    @patch.dict(os.environ, {}, clear=True)
     def test_settings_missing_required_env(self):
         """Test that Settings raises error when required env vars are missing."""
-        with patch.dict(os.environ, {}, clear=True):
-            with pytest.raises(Exception):  # pydantic.ValidationError
-                Settings()
+        # Create a test settings class without .env file loading
+        class TestSettings(BaseSettings):
+            GH_TOKEN: str
+            OPENAI_API_KEY: str
+            EMBED_MODEL: str = "all-MiniLM-L6-v2"
+            OPENAI_MODEL: str = "gpt-4o-mini"
+
+            model_config = SettingsConfigDict(
+                env_file=None,  # Disable .env file loading
+                extra="ignore"
+            )
+        
+        with pytest.raises(ValidationError):
+            TestSettings()
 
     @patch.dict(os.environ, {
         "GH_TOKEN": "override_gh_token",
