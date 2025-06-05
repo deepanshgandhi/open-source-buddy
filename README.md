@@ -134,7 +134,6 @@ The application features an intuitive web interface for skill-based issue discov
 
 3. **Review Results**: Browse through issues ranked by relevance to your skills, complete with:
    - **Difficulty Level**: Easy, Medium, or Hard
-   - **Match Score**: How well the issue aligns with your skills
    - **Personalized Summary**: AI-generated description tailored to your background
    - **Repository Context**: Understanding of the project's purpose and tech stack
 
