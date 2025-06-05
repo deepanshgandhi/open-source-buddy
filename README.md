@@ -116,7 +116,7 @@ uv run python examples/pipeline_example.py
 
 ## User Interface
 
-The application features an intuitive web interface for skill-based issue discovery:
+The application features an intuitive web interface for skill-based issue discovery. The frontend code is available at: https://github.com/deepanshgandhi/issue-whisperer-ai-find
 
 **Input Interface:**
 ![Open Source Buddy - Skill Input](images/interface_1.png)
